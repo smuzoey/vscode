@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+/*
+复制一个文件到另一个文件
+*/
+
+func copy(file1 string, file2 string) error {
+	byteStr, err1 := ioutil.ReadFile(file1)
+	if err1 != nil {
+		return err1
+	}
+
+	err2 := ioutil.WriteFile(file2, byteStr, 006)
+	if err2 != nil {
+		return err2
+	}
+	return nil
+
+}
+
+func main() {
+	err := copy("file01.go", "test2.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+}
