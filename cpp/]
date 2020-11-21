@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string s[300000];
+
+int main() {
+	char str[500005];
+	gets(str);
+	int len = strlen(str);
+	int num = 0;
+	string tmp = "";
+	for(int i = 0; i < len; i++) {
+	   if(str[i] == ' ;) {
+			s[num++] = tmp;
+			tmp = "";
+			while(str[i] == ' ') i++;
+		}
+
+		tmp = tmp + str[i];
+	}
+
+	return 0;
+}
